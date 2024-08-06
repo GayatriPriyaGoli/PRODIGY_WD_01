@@ -9,17 +9,21 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
         }
 
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #333;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
             color: white;
             display: flex;
             justify-content: center;
-            transition: background-color 0.3s;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background 0.3s, padding 0.3s;
         }
 
         nav ul {
@@ -30,19 +34,21 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: white;
-            padding: 15px 20px;
+            padding: 10px 20px;
             display: block;
-            transition: color 0.3s;
+            border-radius: 25px;
+            transition: background 0.3s, color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #ff6347; /* Tomato color */
+            background: rgba(255, 255, 255, 0.3);
+            color: #333;
         }
 
         #content {
@@ -53,10 +59,22 @@
         section {
             height: 100vh;
             padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            transition: background 0.3s;
         }
 
+        #home { background: linear-gradient(to right, #4facfe, #00f2fe); }
+        #about { background: linear-gradient(to right, #43e97b, #38f9d7); }
+        #services { background: linear-gradient(to right, #fa709a, #fee140); }
+        #contact { background: linear-gradient(to right, #ff9a9e, #fecfef); }
+
         #navbar.scrolled {
-            background-color: #555; /* Darker background on scroll */
+            background: linear-gradient(to right, #1f4037, #99f2c8); /* Darker gradient on scroll */
+            padding: 5px 0;
         }
     </style>
 </head>
@@ -80,7 +98,7 @@
     <script>
         window.addEventListener('scroll', function() {
             var navbar = document.getElementById('navbar');
-            if (window.scrollY > 0) {
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
