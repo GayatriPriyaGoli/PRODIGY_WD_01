@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+            font-size: 3em;
+            color: #ecf0f1; /* Light grey color */
+            text-shadow: 2px 2px 0 #34495e; /* Dark grey shadow */
+        }
+
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            background-color: black;
+            padding: 5px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em; /* Adjust font size */
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif; /* Roboto for a thinner look */
+        }
+
+        .cell:hover {
+            background-color: #555;
+        }
+
+        .cell.x {
+            color: red;
+            font-weight: 400; /* Thinner weight for X */
+        }
+
+        .cell.o {
+            color: blue;
+            font-weight: 400; /* Thinner weight for O */
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap">
+</head>
+<body>
+    <div>
+        <h1>Tic-Tac-Toe</h1>
+        <div id="game-board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+    </div>
+    <script>
+        const cells = document.querySelectorAll('[data-cell]');
+        let currentPlayer = 'X';
+
+        cells.forEach(cell => {
+            cell.addEventListener('click', handleClick, { once: true });
+        });
+
+        function handleClick(e) {
+            const cell = e.target;
+            cell.textContent = currentPlayer;
+            cell.classList.add(currentPlayer.toLowerCase());
+            if (checkWin(currentPlayer)) {
+                setTimeout(() => alert(`${currentPlayer} wins!`), 100);
+                return;
+            }
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
+
+        function checkWin(player) {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+                [0, 4, 8], [2, 4, 6] // Diagonals
+            ];
+
+            return winPatterns.some(pattern => {
+                return pattern.every(index => cells[index].textContent === player);
+            });
+        }
+    </script>
+</body>
+</html>
