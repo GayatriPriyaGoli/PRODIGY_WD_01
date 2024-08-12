@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priya - Web Developer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background: #3d0a0a; /* Dark Brick Red */
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            background-image: linear-gradient(to right, #3d0a0a, #6e2e2e);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px 0;
+            border: 5px solid #6e2e2e; /* Dark Brick Red Accent */
+        }
+        .btn {
+            background: #6e2e2e; /* Dark Brick Red */
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #4a1e1e; /* Darker Brick Red */
+        }
+        section {
+            padding: 60px 0;
+            background: #fff;
+            border-bottom: 2px solid #6e2e2e; /* Dark Brick Red */
+        }
+        h2 {
+            border-bottom: 2px solid #6e2e2e; /* Dark Brick Red */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #3d0a0a; /* Dark Brick Red */
+        }
+        .project {
+            margin-bottom: 30px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #3d0a0a; /* Dark Brick Red */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .social-links a {
+            color: #6e2e2e; /* Dark Brick Red */
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+        .social-links a:hover {
+            color: #4a1e1e; /* Darker Brick Red */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form label, form input, form textarea, form button {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 15px;
+        }
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            background: #6e2e2e; /* Dark Brick Red */
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover {
+            background: #4a1e1e; /* Darker Brick Red */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <img src="https://plus.unsplash.com/premium_photo-1661402160894-28c1b3b838ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybCUyMHN0dWRlbnR8ZW58MHx8MHx8fDA%3D" alt="Priya" class="profile-photo">
+            <p>Hi, I'm Priya, a passionate web developer with skills in HTML, CSS, JavaScript, and more. I create beautiful and functional websites.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a web developer with a strong background in creating engaging and responsive websites. My journey in web development started with a keen interest in technology and design, and over the years, I've honed my skills through various projects and professional experiences.</p>
+            <h3>Education</h3>
+            <p>Bachelor's Degree in Computer Science from XYZ University</p>
+            <h3>Professional Experience</h3>
+            <p>Web Developer at ABC Company - Developed and maintained web applications, collaborated with designers and backend developers to create seamless user experiences.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project Title</h3>
+                <p>Description of the project. Explain what it does, the technologies used, and any notable achievements.</p>
+                <a href="[Project Link]" class="btn">View Project</a>
+            </div>
+            <!-- Repeat for other projects -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="http://www.linkedin.com/in/gayatri-priya-g-36710b263" target="_blank">LinkedIn</a>
+                <a href="[Your GitHub URL]" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Priya. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
